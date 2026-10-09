@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './style.css'; // CSS file import ki gayi hai
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -10,30 +11,30 @@ function Login() {
   }
 
   return (
-    <div style={{ maxWidth: '320px', margin: '50px auto', padding: '20px', border: '1px solid #ccc', borderRadius: '8px' }}>
+    <div className="login-container">
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
-        <div style={{ marginBottom: '12px' }}>
+        <div className="form-group">
           <label>Email:</label>
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            style={{ width: '100%', padding: '8px', marginTop: '4px' }}
+            className="form-input"
           />
         </div>
-        <div style={{ marginBottom: '12px' }}>
+        <div className="form-group">
           <label>Password:</label>
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            style={{ width: '100%', padding: '8px', marginTop: '4px' }}
+            className="form-input"
           />
         </div>
-        <button type="submit" style={{ width: '100%', padding: '10px', backgroundColor: '#007bff', color: 'white', border: 'none', borderRadius: '4px' }}>
+        <button type="submit" className="login-btn">
           Log In
         </button>
       </form>
